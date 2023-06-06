@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import Header from './components/Header';
 import TodosLogic from './components/TodosLogic'
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../styles/TodoItem.module.css';
 
 
 const TodoItem = ({ itemProp , handleChange, delTodo ,setUpdate}) => {
@@ -31,8 +32,8 @@ const TodoItem = ({ itemProp , handleChange, delTodo ,setUpdate}) => {
     };
 
     return (
-      <li>
-        <div  style={viewMode}>
+        <li className={styles.item}>
+        <div className={styles.content} style={viewMode}>
         <input type="checkbox"
             checked={itemProp.completed}
             onChange={() => handleChange(itemProp.id)}
@@ -46,6 +47,7 @@ const TodoItem = ({ itemProp , handleChange, delTodo ,setUpdate}) => {
         <input
             type="text"
             value={itemProp.title}
+            className={styles.textInput}
             style={editMode}
             onChange={(e)=>setUpdate(e.target.value,itemProp.id)}
             onKeyDown={handleUpdatedDone}
